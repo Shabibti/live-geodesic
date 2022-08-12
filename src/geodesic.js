@@ -35,6 +35,24 @@ var y = two.height * 0.5;// - radius * 1.25;
 var circle = two.makeCircle(x, y, radius)
 circle.fill = '#000000'
 
-two.update();
+// move a particle in a circle (animation test)
+var p_r = 10;
+var p_x = two.width / 4;
+var p_y = two.height / 2;
+var particle = two.makeCircle(p_x, p_y, p_r);
+particle.fill = '#000000'
+
+two.bind('update', update)
+two.play();
+
+// time variable for evolution
+var t = 0;
+
+// this is called every frame by two.play()
+function update(frameCount) {
+    t += 0.1;
+    particle.translation.x = p_x + 50*Math.cos(t);
+    particle.translation.y = p_y + 50*Math.sin(t);
+}
 
 }
