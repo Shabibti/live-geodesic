@@ -52,6 +52,8 @@ function draw()
 
     var orbit_radius = two.width / 4;
 
+    var fake_decay = 10;
+
     // this is called every frame by two.play()
     function update(frameCount) {
         t += 0.1;
@@ -65,7 +67,8 @@ function draw()
         //change particle orbit with BH size
         particle.translation.x = (p_x*2) + orbit_radius*Math.cos(t)*0.02*circle.radius;
         particle.translation.y = p_y + orbit_radius*Math.sin(t)*0.02*circle.radius;
-
+        // particle.translation.x = (p_x*2) + fake_decay/t * orbit_radius*Math.cos(t)*0.02*circle.radius;
+        // particle.translation.y = p_y + fake_decay/t * orbit_radius*Math.sin(t)*0.02*circle.radius;
     }
 
 }
