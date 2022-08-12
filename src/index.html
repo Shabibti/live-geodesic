@@ -9,37 +9,6 @@
 <script src="two.min.js"></script>
 
 <script>
-//     // Make an instance of two and place it on the page.
-// var params = {
-//   fullscreen: true
-// };
-// var elem = document.body;
-// var two = new Two(params).appendTo(elem);
-
-// // Two.js has convenient methods to make shapes and insert them into the scene.
-// var radius = 50;
-// var x = two.width * 0.5;
-// var y = two.height * 0.5 - radius * 1.25;
-// var circle = two.makeCircle(x, y, radius);
-
-// y = two.height * 0.5 + radius * 1.25;
-// var width = 100;
-// var height = 100;
-// var rect = two.makeRectangle(x, y, width, height);
-
-// // The object returned has many stylable properties:
-// circle.fill = '#FF8000';
-// // And accepts all valid CSS color:
-// circle.stroke = 'orangered';
-// circle.linewidth = 5;
-
-// rect.fill = 'rgb(0, 200, 255)';
-// rect.opacity = 0.75;
-// rect.noStroke();
-
-// // Don’t forget to tell two to draw everything to the screen
-// two.update();
-
 var params = {
     fullscreen: true
 };
@@ -58,20 +27,61 @@ for(var i = 0; i < num_grid_lines_y; i++) {
     a = two.makeLine(0, grid_spacing*i, two.width, grid_spacing*i)
     a.stroke = '#6dcff6';
 }
-// var a = two.makeLine(two.width / 2, 0, two.width / 2, two.height);
-// var b = two.makeLine(0, two.height / 2, two.width, two.height / 2);
-// a.stroke = b.stroke = '#6dcff6';
-
-//createGrid();
 
 // make a black hole
 var radius = 50;
 var x = two.width * 0.5;
 var y = two.height * 0.5;// - radius * 1.25;
-var circle = two.makeCircle(x, y, radius)
-circle.fill = '#000000'
+var circle = two.makeCircle(x, y, radius);
+circle.fill = '#000000';
 
-two.update();
+
+// move a particle in a circle (animation test)
+var p_r = 10;
+var p_x = two.width / 4;
+var p_y = two.height / 2;
+var particle = two.makeCircle(p_x, p_y, p_r);
+particle.fill = '#000000'
+
+two.bind('update', update);
+two.play();
+
+var t = 0;
+function update(frameCount) {
+  // This code is called every time two.update() is called.
+    t += 0.1;
+    particle.translation.x = p_x + 50*Math.cos(t);
+    particle.translation.y = p_y + 50*Math.sin(t);
+}
+
+
+// var circle = two.makeCircle(-70, 0, 50);
+// var rect = two.makeRectangle(70, 0, 100, 100);
+// circle.fill = '#FF8000';
+// rect.fill = 'rgba(0, 200, 255, 0.75)';
+
+// var cx = two.width * 0.5;
+// var cy = two.height * 0.5;
+// var group = two.makeGroup(circle, rect);
+// group.position.set(cx, cy);
+// group.scale = 0;
+// group.noStroke();
+
+// // Bind a function to scale and rotate the group to the animation loop.
+// two.bind('update', update);
+// // Finally, start the animation loop
+// two.play();
+
+// function update(frameCount) {
+//   // This code is called every time two.update() is called.
+//   if (group.scale > 0.9999) {
+//     group.scale = group.rotation = 0;
+//   }
+//   var t = (1 - group.scale) * 0.125;
+//   group.scale += t;
+//   group.rotation += t * 4 * Math.PI;
+//   group.translation.y = group.translation.y + 10;
+// }
 
 </script>
 
