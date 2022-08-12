@@ -1,79 +1,12 @@
 <!DOCTYPE html>
 <html>
-<body>
+<script src="two.min.js"></script>
+<script src="geodesic.js"></script>
+<body onload='startup();'>
 
 <h2>Live Geodesic</h2>
 
 <p id="demo"></p>
-
-<script src="two.min.js"></script>
-
-<script>
-//     // Make an instance of two and place it on the page.
-// var params = {
-//   fullscreen: true
-// };
-// var elem = document.body;
-// var two = new Two(params).appendTo(elem);
-
-// // Two.js has convenient methods to make shapes and insert them into the scene.
-// var radius = 50;
-// var x = two.width * 0.5;
-// var y = two.height * 0.5 - radius * 1.25;
-// var circle = two.makeCircle(x, y, radius);
-
-// y = two.height * 0.5 + radius * 1.25;
-// var width = 100;
-// var height = 100;
-// var rect = two.makeRectangle(x, y, width, height);
-
-// // The object returned has many stylable properties:
-// circle.fill = '#FF8000';
-// // And accepts all valid CSS color:
-// circle.stroke = 'orangered';
-// circle.linewidth = 5;
-
-// rect.fill = 'rgb(0, 200, 255)';
-// rect.opacity = 0.75;
-// rect.noStroke();
-
-// // Don’t forget to tell two to draw everything to the screen
-// two.update();
-
-var params = {
-    fullscreen: true
-};
-var elem = document.body;
-var two = new Two(params).appendTo(elem)
-
-// make a grid
-grid_spacing = 10;
-num_grid_lines_x = two.width / grid_spacing;
-num_grid_lines_y = two.height / grid_spacing;
-for(var i = 0; i < num_grid_lines_x; i++) {
-    a = two.makeLine(grid_spacing*i, 0, grid_spacing*i, two.height)
-    a.stroke = '#6dcff6';
-}
-for(var i = 0; i < num_grid_lines_y; i++) {
-    a = two.makeLine(0, grid_spacing*i, two.width, grid_spacing*i)
-    a.stroke = '#6dcff6';
-}
-// var a = two.makeLine(two.width / 2, 0, two.width / 2, two.height);
-// var b = two.makeLine(0, two.height / 2, two.width, two.height / 2);
-// a.stroke = b.stroke = '#6dcff6';
-
-//createGrid();
-
-// make a black hole
-var radius = 50;
-var x = two.width * 0.5;
-var y = two.height * 0.5;// - radius * 1.25;
-var circle = two.makeCircle(x, y, radius)
-circle.fill = '#000000'
-
-two.update();
-
-</script>
 
 </body>
 </html> 
