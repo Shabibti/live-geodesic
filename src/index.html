@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html>
+
+
+    <div id="content">
+    </div>
+    <div id="text">
+      <h1 contenteditable="true">
+        Live-Geodesic
+      </h1>
+      <div class="speaker">
+        <p class="name"  contenteditable="true">
+          NRCSS 2022 Team
+        </p>
+        <p class="role" contenteditable="true">
+            https://github.com/Shabibti/live-geodesic
+        </p>
+      </div>
+    </div>
 <body>
-
-<h2>Live Geodesic</h2>
-
 <p id="demo"></p>
 
 <script src="two.min.js"></script>
@@ -71,9 +85,14 @@ var y = two.height * 0.5;// - radius * 1.25;
 var circle = two.makeCircle(x, y, radius)
 circle.fill = '#000000'
 
+
+
 two.update();
 
 </script>
 
+
+<label for="fader">Mass</label>
+<input type="range" min="1" max="10" value="3" id="fader">
 </body>
 </html> 
