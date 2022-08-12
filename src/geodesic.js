@@ -1,6 +1,7 @@
 // Two.js has convenient methods to make shapes and insert them into the scene.
 var two;
 var window_size = Math.min(.5*window.innerHeight, .5*window.innerWidth);
+var t = 0;
 
 // Make an instance of two and place it on the page.
 function startup()
@@ -13,6 +14,12 @@ function startup()
     two.renderer.setSize(window_size * 2, window_size);
 
     draw();
+}
+
+
+function resetTime()
+{
+    t = 0;
 }
 
 function draw()
@@ -48,7 +55,7 @@ function draw()
     two.play();
 
     // time variable for evolution
-    var t = 0;
+    t = 0;
 
     var orbit_radius = two.width / 4;
 
@@ -63,12 +70,17 @@ function draw()
         //change BH size based on slider value
         BH_scale = document.getElementById("BHMass").value;
         circle.radius = radius*BH_scale;
+        var checkbox = document.getElementById("decay");
 
         //change particle orbit with BH size
+        if (!checkbox.checked) {
         particle.translation.x = (p_x*2) + orbit_radius*Math.cos(t)*0.02*circle.radius;
-        particle.translation.y = p_y + orbit_radius*Math.sin(t)*0.02*circle.radius;
-        // particle.translation.x = (p_x*2) + fake_decay/t * orbit_radius*Math.cos(t)*0.02*circle.radius;
-        // particle.translation.y = p_y + fake_decay/t * orbit_radius*Math.sin(t)*0.02*circle.radius;
+        particle.translation.y = p_y + orbit_radius*Math.sin(t)*0.02*circle.radius; }
+        
+        else{
+        particle.translation.x = (p_x*2) + fake_decay/t * orbit_radius*Math.cos(t)*0.02*circle.radius;
+        particle.translation.y = p_y + fake_decay/t * orbit_radius*Math.sin(t)*0.02*circle.radius;}
     }
+
 
 }
