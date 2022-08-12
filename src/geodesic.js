@@ -55,12 +55,17 @@ function draw()
     // this is called every frame by two.play()
     function update(frameCount) {
         t += 0.1;
-        particle.translation.x = (p_x*2) + orbit_radius*Math.cos(t);
-        particle.translation.y = p_y + orbit_radius*Math.sin(t);
+        //particle.translation.x = (p_x*2) + orbit_radius*Math.cos(t);
+        //particle.translation.y = p_y + orbit_radius*Math.sin(t);
 
         //change BH size based on slider value
         BH_scale = document.getElementById("BHMass").value;
         circle.radius = radius*BH_scale;
+
+        //change particle orbit with BH size
+        particle.translation.x = (p_x*2) + orbit_radius*Math.cos(t)*0.02*circle.radius;
+        particle.translation.y = p_y + orbit_radius*Math.sin(t)*0.02*circle.radius;
+
     }
 
 }
