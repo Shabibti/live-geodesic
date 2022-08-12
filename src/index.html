@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
 
+    
+<body>
 
-    <div id="content">
-    </div>
-    <div id="text">
-      <h1 contenteditable="true">
+      <h1>
         Live-Geodesic
       </h1>
-      <div class="speaker">
-        <p class="name"  contenteditable="true">
+      <p>
           NRCSS 2022 Team
         </p>
-        <p class="role" contenteditable="true">
+        <p>
             https://github.com/Shabibti/live-geodesic
         </p>
-      </div>
-    </div>
-<body>
+
 <p id="demo"></p>
 
 <script src="two.min.js"></script>
@@ -28,7 +27,7 @@ var params = {
 };
 var elem = document.body;
 var two = new Two(params).appendTo(elem)
-two.renderer.domElement.style.background = '#111';
+//two.renderer.domElement.style.background = '#111';
 // make a grid
 grid_spacing = 10;
 num_grid_lines_x = two.width / grid_spacing;
@@ -100,7 +99,8 @@ function update(frameCount) {
 </script>
 
 
-<label for="fader">Mass</label>
+<label for="fader">BH Mass</label>
 <input type="range" min="1" max="10" value="3" id="fader">
+
 </body>
 </html> 
