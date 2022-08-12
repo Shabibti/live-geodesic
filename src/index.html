@@ -2,11 +2,13 @@
 <html>
 <script src="two.min.js"></script>
 <script src="geodesic.js"></script>
-<body onload='startup();'>
 
 <h2>Live Geodesic</h2>
 
-<p id="demo"></p>
+<body onload='startup();'>
+  <div class="slidecontainer">
+    <input type="range" min=".5" max="2" defaultValue=".75" step=.01 class="slider" id="BHMass">
+  </div>
 
 </body>
 </html> 
