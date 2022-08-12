@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400|Work+Sans:700');
+
+#text,
+#content {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+h1 {
+  color: white;
+  position: absolute;
+  top: 50%;
+  font-family: Graphik-Semibold, sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  padding: 0 36px;
+  margin-top: -24px;
+  outline: none;
+}
+
+div.speaker {
+  color: white;
+  position: absolute;
+  min-width: 300px;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  margin: 0 36px;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  line-height: 15px;
+  border-top: 1px solid white;
+}
+
+p {
+  outline: none;
+}
+
+#f8-solo {
+  display: block;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+}
