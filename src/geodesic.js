@@ -10,7 +10,7 @@ function startup()
         };
     var elem = document.body;
     two = new Two(params).appendTo(elem);
-    two.renderer.setSize(window_size, window_size);
+    two.renderer.setSize(window_size * 2, window_size);
 
     draw();
 }
