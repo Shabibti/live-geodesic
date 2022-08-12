@@ -50,11 +50,13 @@ function draw()
     // time variable for evolution
     var t = 0;
 
+    var orbit_radius = two.width / 4;
+
     // this is called every frame by two.play()
     function update(frameCount) {
         t += 0.1;
-        particle.translation.x = p_x + 50*Math.cos(t);
-        particle.translation.y = p_y + 50*Math.sin(t);
+        particle.translation.x = (p_x*2) + orbit_radius*Math.cos(t);
+        particle.translation.y = p_y + orbit_radius*Math.sin(t);
 
         //change BH size based on slider value
         BH_scale = document.getElementById("BHMass").value;
