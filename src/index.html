@@ -45,7 +45,7 @@ var params = {
 };
 var elem = document.body;
 var two = new Two(params).appendTo(elem)
-
+two.renderer.domElement.style.background = '#111';
 // make a grid
 grid_spacing = 10;
 num_grid_lines_x = two.width / grid_spacing;
